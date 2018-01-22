@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native';
-
 var properties = require('./css-properties.js');
 var PropTypes = require('prop-types');
 
@@ -11,7 +9,7 @@ module.exports = function(props, propName, componentName) {
 
   /* Resolve ID-to-object mapping issue under Windows build */
   if (typeof styles === 'number') {
-      styles = StyleSheet.flatten(styles)
+      styles = require('react-native').StyleSheet.flatten(styles)
   }
 
   var failures = [];
